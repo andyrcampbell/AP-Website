@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Enquire about Alternative Photographic editions — studio viewings, edition availability, collector enquiries.">
+  <title>Enquire — Alternative Photographic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+  <!-- SITE HEADER -->
+  <header class="site-header" role="banner">
+    <div class="site-header__inner">
+      <a href="index.html" class="site-header__logo" aria-label="Alternative Photographic — home">
+        <img src="assets/images/logo-light.png" alt="Alternative Photographic" width="220" height="60">
+        <span class="site-header__logo-divider" aria-hidden="true"></span>
+        <span class="site-header__logo-descriptor" aria-hidden="true">Fine Art</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation menu">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
+      <nav id="main-nav" class="site-nav" aria-label="Main navigation">
+        <a href="collections/index.html" class="site-nav__link">The Work</a>
+        <a href="about.html" class="site-nav__link">About</a>
+        <a href="enquire.html" class="site-nav__enquire" aria-current="page">Enquire</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <div class="page-header">
+      <div class="wrapper">
+        <span class="page-header__eyebrow">Contact</span>
+        <h1 class="page-header__title">Enquire</h1>
+        <p class="page-header__body">For edition availability, studio viewings, commission discussions, or any question about the work. We respond to all enquiries personally within two working days.</p>
+      </div>
+    </div>
+
+    <section class="section" aria-label="Enquiry form and contact details">
+      <div class="wrapper">
+        <div class="enquire-layout">
+
+          <!-- LEFT: Context -->
+          <div class="enquire-intro">
+            <p>Collector-grade fine art photography is not a transaction that should happen at speed. We would rather spend time with a serious enquiry than process a quick one carelessly. If you have questions about an edition, want to discuss what a placement might look like in a specific space, or simply want to understand more about the work before making any decision — write to us.</p>
+            <p>Studio viewings can be arranged for collectors considering an edition. We prefer enquiries to arrive before viewings rather than after; the work is better understood in the context of the conversation that precedes it.</p>
+
+            <div class="enquire-detail">
+              <div class="enquire-detail__item">
+                <h3>Edition Availability</h3>
+                <p>Current edition status is confirmed at the time of enquiry. Works listed in the catalogue remain available until the edition is complete. We do not hold or reserve editions without a confirmed placement.</p>
+              </div>
+              <div class="enquire-detail__item">
+                <h3>Arrange a Viewing</h3>
+                <p>Studio viewings are available by appointment. Please indicate the works you are considering and your approximate availability, and we will confirm a date.</p>
+              </div>
+              <div class="enquire-detail__item">
+                <h3>Commission Enquiry</h3>
+                <p>A limited number of commissioned location projects are undertaken each year. Please provide some context for the commission — subject, location, intended use — and we will advise whether the project falls within the scope of what we do.</p>
+              </div>
+              <div class="enquire-detail__item">
+                <h3>Payment &amp; Terms</h3>
+                <p>Payment arrangements for collector-grade editions are discussed as part of the enquiry process. Staged payments can be accommodated for works above a certain value. This is a conversation, not a checkout.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Form -->
+          <div class="enquire-form" role="form" aria-label="Enquiry form">
+            <form id="enquire-form" novalidate>
+              <div class="form-group">
+                <label for="enquire-name">Name</label>
+                <input type="text" id="enquire-name" name="name" placeholder="Your name" required autocomplete="name">
+              </div>
+
+              <div class="form-group">
+                <label for="enquire-email">Email</label>
+                <input type="email" id="enquire-email" name="email" placeholder="Your email address" required autocomplete="email">
+              </div>
+
+              <div class="form-group">
+                <label for="enquire-type">Nature of enquiry</label>
+                <select id="enquire-type" name="enquiry-type">
+                  <option value="">Select one</option>
+                  <option value="edition-availability">Edition availability</option>
+                  <option value="studio-viewing">Arrange a studio viewing</option>
+                  <option value="commission">Commission enquiry</option>
+                  <option value="collector-list">Collector list registration</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="artwork-interest">Work or edition of interest (if applicable)</label>
+                <input type="text" id="artwork-interest" name="artwork-interest" placeholder="Title of the work">
+              </div>
+
+              <div class="form-group">
+                <label for="enquire-message">Message</label>
+                <textarea id="enquire-message" name="message" placeholder="Please provide as much context as you are comfortable sharing. There is no minimum — a single question is sufficient." rows="6"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn--primary w-full" style="justify-content:center;width:100%;">Send Enquiry</button>
+              <p style="margin-top:var(--sp-4);font-size:var(--text-xs);color:var(--color-text-faint);line-height:1.7;letter-spacing:0.04em;">We respond to all enquiries personally. Your details will not be shared with third parties or used for promotional purposes beyond the scope of this enquiry.</p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="wrapper">
+      <div class="site-footer__inner">
+        <div class="site-footer__brand">
+          <img src="assets/images/logo-light.png" alt="Alternative Photographic" class="site-footer__logo">
+          <p class="site-footer__tagline">Fine art photography editions. Landscape, travel, and documentary work presented in strictly limited runs for collectors.</p>
+        </div>
+        <div>
+          <h3 class="site-footer__col-heading">The Work</h3>
+          <ul class="site-footer__links">
+            <li><a href="collections/venice.html" class="site-footer__link">Venice</a></li>
+            <li><a href="collections/highlands.html" class="site-footer__link">Hebrides &amp; Highlands</a></li>
+            <li><a href="collections/alpine-riviera.html" class="site-footer__link">Alpine &amp; Riviera</a></li>
+            <li><a href="collections/california-coast.html" class="site-footer__link">California Coast</a></li>
+            <li><a href="collections/selected-works.html" class="site-footer__link">Selected Works</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="site-footer__col-heading">Studio</h3>
+          <ul class="site-footer__links">
+            <li><a href="about.html" class="site-footer__link">About</a></li>
+            <li><a href="enquire.html" class="site-footer__link">Enquire</a></li>
+            <li><a href="enquire.html" class="site-footer__link">Arrange a Viewing</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="site-footer__col-heading">Editions</h3>
+          <ul class="site-footer__links">
+            <li><a href="about.html#edition-policy" class="site-footer__link">Edition Policy</a></li>
+            <li><a href="about.html#materials" class="site-footer__link">Materials &amp; Process</a></li>
+            <li><a href="about.html#certificate" class="site-footer__link">Certificate of Authenticity</a></li>
+            <li><a href="about.html#shipping" class="site-footer__link">Shipping &amp; Fulfilment</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p class="site-footer__legal">&copy; 2026 Alternative Photographic. All rights reserved.</p>
+        <div class="site-footer__legal-links">
+          <a href="#" class="site-footer__legal-link">Privacy</a>
+          <a href="#" class="site-footer__legal-link">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
