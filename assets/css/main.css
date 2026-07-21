@@ -243,11 +243,12 @@
     height: var(--nav-height);
     display: flex;
     align-items: center;
-    transition: background-color var(--ease-base), backdrop-filter var(--ease-base);
+    background-color: var(--color-bg);  /* solid black -- hero sits below, not behind */
+    transition: backdrop-filter var(--ease-base);
   }
 
   .site-header.scrolled {
-    background-color: rgba(10, 10, 10, 0.92);
+    background-color: var(--color-bg);  /* remains solid; blur for content scrolling under */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--color-border-subtle);
@@ -429,7 +430,8 @@
 
   .hero {
     position: relative;
-    height: 100svh;
+    margin-top: var(--nav-height);             /* push below solid header */
+    height: calc(100svh - var(--nav-height));  /* fill remaining first viewport */
     min-height: 600px;
     display: flex;
     align-items: flex-end;
@@ -506,7 +508,7 @@
   }
 
   @media (max-width: 768px) {
-    .hero { height: 100svh; }
+    .hero { height: calc(100svh - var(--nav-height)); }
     .hero__content { padding-bottom: var(--sp-12); }
   }
 
