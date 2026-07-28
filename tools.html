@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Photographic tools from Alternative Photographic — a VR gallery environment and Lightroom AI develop tools, in development.">
+  <title>Photographic Tools — Alternative Photographic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Photographic Tools — Alternative Photographic">
+  <meta property="og:description" content="Photographic tools from Alternative Photographic — a VR gallery environment and Lightroom AI develop tools, in development.">
+  <meta property="og:image" content="https://andyrcampbell.github.io/AP-Website/assets/images/logo-light.png">
+</head>
+<body>
+
+  <!-- SITE HEADER -->
+  <header class="site-header" role="banner">
+    <div class="site-header__inner">
+      <a href="index.html" class="site-header__logo" aria-label="Alternative Photographic — home">
+        <img src="assets/images/logo-light.png" alt="Alternative Photographic" width="220" height="60">
+        <span class="site-header__logo-divider" aria-hidden="true"></span>
+        <span class="site-header__logo-descriptor" aria-hidden="true">Fine Art</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open navigation menu">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
+      <nav id="main-nav" class="site-nav" aria-label="Main navigation">
+        <a href="collections/index.html" class="site-nav__link">The Work</a>
+        <a href="about.html" class="site-nav__link">About</a>
+        <a href="tools.html" class="site-nav__link" aria-current="page">Tools</a>
+        <a href="enquire.html" class="site-nav__enquire">Enquire</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <div class="wrapper">
+        <span class="page-header__eyebrow">The Studio</span>
+        <h1 class="page-header__title">Photographic Tools</h1>
+        <p class="page-header__body">Instruments built from practice. Two tools are in development — a spatial gallery environment for viewing the catalogue at print scale, and a Lightroom develop toolkit drawn directly from the AP visual language.</p>
+      </div>
+    </div>
+
+    <!-- TOOL CARDS -->
+    <section class="section" aria-label="Tools in development" style="border-top:1px solid var(--color-border-subtle);">
+      <div class="wrapper">
+        <div class="grid-2" style="gap:var(--sp-8);align-items:start;">
+
+          <!-- VR Gallery -->
+          <article aria-labelledby="tool-vr-title" style="background-color:var(--color-surface);border:1px solid var(--color-border);padding:var(--sp-10) var(--sp-10) var(--sp-12);display:flex;flex-direction:column;gap:var(--sp-6);">
+            <span style="font-size:var(--text-xs);font-family:var(--font-body);font-weight:400;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-text-faint);">In Development</span>
+            <h2 id="tool-vr-title" style="font-family:var(--font-display);font-size:var(--text-3xl);font-weight:300;line-height:1.1;">VR Gallery</h2>
+            <p style="color:var(--color-text-muted);line-height:1.9;max-width:46ch;">A spatial environment for encountering the full AP catalogue at print scale — editions arranged in sequence, viewable on Quest hardware or in a standard browser. A different way to spend time with a photograph before committing to a wall.</p>
+            <p style="font-size:var(--text-sm);color:var(--color-text-faint);letter-spacing:0.06em;margin-top:var(--sp-2);">Available when ready.</p>
+          </article>
+
+          <!-- Lightroom AI Tools -->
+          <article aria-labelledby="tool-lr-title" style="background-color:var(--color-surface);border:1px solid var(--color-border);padding:var(--sp-10) var(--sp-10) var(--sp-12);display:flex;flex-direction:column;gap:var(--sp-6);">
+            <span style="font-size:var(--text-xs);font-family:var(--font-body);font-weight:400;letter-spacing:0.15em;text-transform:uppercase;color:var(--color-text-faint);">In Development</span>
+            <h2 id="tool-lr-title" style="font-family:var(--font-display);font-size:var(--text-3xl);font-weight:300;line-height:1.1;">Lightroom AI Tools</h2>
+            <p style="color:var(--color-text-muted);line-height:1.9;max-width:46ch;">Calibrated presets and AI-assisted develop profiles drawn directly from the AP visual language — the specific colour science, tonal decisions, and film stock references that underpin the work, made available as a practical develop toolkit.</p>
+            <p style="font-size:var(--text-sm);color:var(--color-text-faint);letter-spacing:0.06em;margin-top:var(--sp-2);">Available when ready.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSING NOTE -->
+    <section class="section section--tight" aria-label="Tools note" style="border-top:1px solid var(--color-border-subtle);text-align:center;">
+      <div class="wrapper">
+        <p style="color:var(--color-text-faint);font-size:var(--text-sm);line-height:1.9;max-width:52ch;margin-inline:auto;">Both tools are being built around the catalogue. There are no launch dates. They will be available when the work justifies it.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="wrapper">
+      <div class="site-footer__inner">
+        <div class="site-footer__brand">
+          <img src="assets/images/logo-light.png" alt="Alternative Photographic" class="site-footer__logo">
+          <p class="site-footer__tagline">Fine art photography editions. Landscape, travel, and documentary work presented in strictly limited runs for collectors.</p>
+        </div>
+        <div>
+          <h3 class="site-footer__col-heading">The Work</h3>
+          <ul class="site-footer__links">
+            <li><a href="collections/venice.html" class="site-footer__link">Venice</a></li>
+            <li><a href="collections/highlands.html" class="site-footer__link">Hebrides &amp; Highlands</a></li>
+            <li><a href="collections/alpine-riviera.html" class="site-footer__link">Alpine &amp; Riviera</a></li>
+            <li><a href="collections/california-coast.html" class="site-footer__link">California Coast</a></li>
+            <li><a href="collections/selected-works.html" class="site-footer__link">Selected Works</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="site-footer__col-heading">Studio</h3>
+          <ul class="site-footer__links">
+            <li><a href="about.html" class="site-footer__link">About</a></li>
+            <li><a href="tools.html" class="site-footer__link">Photographic Tools</a></li>
+            <li><a href="enquire.html" class="site-footer__link">Enquire</a></li>
+            <li><a href="enquire.html" class="site-footer__link">Arrange a Viewing</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="site-footer__col-heading">Editions</h3>
+          <ul class="site-footer__links">
+            <li><a href="about.html#edition-policy" class="site-footer__link">Edition Policy</a></li>
+            <li><a href="about.html#materials" class="site-footer__link">Materials &amp; Process</a></li>
+            <li><a href="about.html#certificate" class="site-footer__link">Certificate of Authenticity</a></li>
+            <li><a href="about.html#shipping" class="site-footer__link">Shipping &amp; Fulfilment</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p class="site-footer__legal">&copy; 2026 Alternative Photographic. All rights reserved.</p>
+        <div class="site-footer__legal-links">
+          <a href="#" class="site-footer__legal-link">Privacy</a>
+          <a href="#" class="site-footer__legal-link">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
