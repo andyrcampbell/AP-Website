@@ -1684,6 +1684,44 @@
     border-top: 1px solid var(--color-border-subtle);
   }
 
+  /* ── ACS ATTRIBUTION MARK — ACS-wide standard ─────────────────────────────── */
+
+  .acs-attribution-row {
+    margin-top: var(--sp-8);
+    padding-top: var(--sp-8);
+    border-top: 1px solid var(--color-border-subtle);
+    display: flex;
+    justify-content: center;
+  }
+
+  .acs-attribution {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    transition: opacity 150ms ease;
+  }
+
+  .acs-attribution:hover {
+    opacity: 0.75;
+  }
+
+  .acs-attribution__logo {
+    height: 24px;
+    width: auto;
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .acs-attribution__text {
+    font-size: var(--text-xs);   /* 0.6875rem / ~11px */
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    color: var(--color-text-faint);
+    white-space: nowrap;
+  }
+
 }
 
 /* =============================================================================
