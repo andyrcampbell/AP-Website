@@ -16,8 +16,8 @@
    * While null the forms will NOT submit and will not pretend to succeed —
    * they show an honest "not yet live" message on submit.
    * ═══════════════════════════════════════════════════════════════════════════ */
-  var FORMSPREE_ENQUIRY_ID   = null; // ← REPLACE null WITH YOUR ENQUIRY FORM ID
-  var FORMSPREE_COLLECTOR_ID = null; // ← REPLACE null WITH YOUR COLLECTOR FORM ID
+  var FORMSPREE_ENQUIRY_ID   = 'xkjwnqpj'; // Formspree enquiry endpoint
+  var FORMSPREE_COLLECTOR_ID = 'xrpzgyjl'; // Formspree collector endpoint
 
   var FORMSPREE_BASE = 'https://formspree.io/f/';
 
