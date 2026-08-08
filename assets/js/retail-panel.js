@@ -77,7 +77,6 @@
 
   function buildCTA(aw, size) {
     var base     = '../enquire.html?artwork=' + aw.enquiryParam;
-    var viewing  = base + '&type=viewing';
     var noLink   = !size.paymentLink || size.paymentLink === 'REPLACE_ME';
 
     if (noLink) {
@@ -87,10 +86,7 @@
         '</p>' +
         '<a href="' + base + '" class="btn btn--primary retail-panel__cta-primary">' +
           'Enquire About This Edition' +
-        '</a>' +
-        '<div class="retail-panel__cta-secondary">' +
-          '<a href="' + viewing + '" class="btn btn--ghost">Arrange a Viewing</a>' +
-        '</div>'
+        '</a>'
       );
     }
 
