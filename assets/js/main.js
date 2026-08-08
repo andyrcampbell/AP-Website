@@ -111,7 +111,10 @@
       return { field: email, msg: 'Please enter your email address.' };
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()))
       return { field: email, msg: 'Please enter a valid email address.' };
-    if (terms && !terms.checked)
+    // Fail CLOSED: if checkbox is absent from the DOM, refuse submission
+    if (!terms)
+      return { field: null, msg: 'This form cannot be submitted right now — please email us directly at admin@alternativeconcept.studio.' };
+    if (!terms.checked)
       return { field: terms, msg: 'Please confirm you have read and agree to the Terms of Use and Terms of Sale before submitting.' };
     return null;
   }
@@ -258,10 +261,15 @@
     collectorForm.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      // --- Validate terms agreement ---
-      if (collectorTerms && !collectorTerms.checked) {
+      // --- Validate terms agreement (fail CLOSED: re-query live DOM) ---
+      var liveTerms = collectorForm.querySelector('[name="terms-agreement"]');
+      if (!liveTerms) {
+        setStatus(collectorStatus, 'This form cannot be submitted right now — please email us directly at admin@alternativeconcept.studio.', 'error');
+        return;
+      }
+      if (!liveTerms.checked) {
         setStatus(collectorStatus, 'Please confirm you have read and agree to the Terms of Use and Terms of Sale before registering.', 'error');
-        collectorTerms.focus();
+        liveTerms.focus();
         return;
       }
 
