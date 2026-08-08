@@ -121,6 +121,18 @@
                 style="font-size:var(--text-sm);line-height:1.7;margin-bottom:var(--sp-4);
                        padding:var(--sp-3) var(--sp-4);border-left:2px solid currentColor;"></div>
 
+              <!-- Terms agreement — legally required clickwrap -->
+              <div style="display:flex;align-items:flex-start;gap:var(--sp-3);margin-bottom:var(--sp-5);">
+                <input type="checkbox" id="terms-agreement" name="terms-agreement" required
+                  style="margin-top:0.2em;flex-shrink:0;accent-color:var(--prim-gold);width:1rem;height:1rem;cursor:pointer;">
+                <label for="terms-agreement" style="font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.7;cursor:pointer;">
+                  I have read and agree to the <a href="terms.html#part-a" style="color:var(--prim-gold);text-decoration:underline;">Terms of Use</a> and <a href="terms.html#part-b" style="color:var(--prim-gold);text-decoration:underline;">Terms of Sale</a>
+                </label>
+              </div>
+
+              <!-- Assent record — version string (timestamp added by JS at submit) -->
+              <input type="hidden" name="terms_version" value="v1.0-2026-08-07">
+
               <button type="submit" class="btn btn--primary w-full" style="justify-content:center;width:100%;">Send Enquiry</button>
               <p style="margin-top:var(--sp-4);font-size:var(--text-xs);color:var(--color-text-faint);line-height:1.7;letter-spacing:0.04em;">We respond to all enquiries personally. Your details will not be shared with third parties or used for promotional purposes beyond the scope of this enquiry.</p>
             </form>
@@ -192,7 +204,7 @@
         <p class="site-footer__legal">&copy; 2026 Alternative Photographic. All rights reserved.</p>
         <div class="site-footer__legal-links">
           <a href="privacy.html" class="site-footer__legal-link">Privacy</a>
-          <a href="#" class="site-footer__legal-link">Terms</a>
+          <a href="terms.html" class="site-footer__legal-link">Terms</a>
         </div>
       </div>
     </div>

@@ -325,7 +325,15 @@
           <p class="collector-strip__body">
             Register to receive notification of new edition releases before public announcement. This is not a promotional list. Correspondence is limited to edition releases and exhibition appearances.
           </p>
-          <form class="collector-strip__form" aria-label="Collector list registration">
+          <form class="collector-strip__form" aria-label="Collector list registration" novalidate>
+            <!-- Terms agreement — full-width row in the flex form -->
+            <div style="flex-basis:100%;display:flex;align-items:flex-start;gap:var(--sp-3);">
+              <input type="checkbox" id="collector-terms-agreement" name="terms-agreement" required
+                style="margin-top:0.2em;flex-shrink:0;accent-color:var(--prim-gold);width:1rem;height:1rem;cursor:pointer;">
+              <label for="collector-terms-agreement" style="font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.7;cursor:pointer;">
+                I have read and agree to the <a href="terms.html#part-a" style="color:var(--prim-gold);text-decoration:underline;">Terms of Use</a> and <a href="terms.html#part-b" style="color:var(--prim-gold);text-decoration:underline;">Terms of Sale</a>
+              </label>
+            </div>
             <label for="collector-email" class="visually-hidden">Email address</label>
             <input
               type="email"
@@ -338,6 +346,8 @@
             >
             <!-- Honeypot — spam filter; must remain empty -->
             <input type="text" name="_gotcha" style="display:none!important" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <!-- Assent record — version string (timestamp added by JS at submit) -->
+            <input type="hidden" name="terms_version" value="v1.0-2026-08-07">
             <button type="submit" class="btn btn--primary">Register</button>
           </form>
           <!-- Collector form status / error region -->
@@ -417,7 +427,7 @@
         <p class="site-footer__legal">&copy; 2026 Alternative Photographic. All rights reserved.</p>
         <div class="site-footer__legal-links">
           <a href="privacy.html" class="site-footer__legal-link">Privacy</a>
-          <a href="#" class="site-footer__legal-link">Terms</a>
+          <a href="terms.html" class="site-footer__legal-link">Terms</a>
         </div>
       </div>
     </div>

@@ -104,12 +104,15 @@
   function validateEnquiry(form) {
     var name  = form.querySelector('[name="name"]');
     var email = form.querySelector('[name="email"]');
+    var terms = form.querySelector('[name="terms-agreement"]');
     if (!name || !name.value.trim())
       return { field: name, msg: 'Please enter your name.' };
     if (!email || !email.value.trim())
       return { field: email, msg: 'Please enter your email address.' };
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()))
       return { field: email, msg: 'Please enter a valid email address.' };
+    if (terms && !terms.checked)
+      return { field: terms, msg: 'Please confirm you have read and agree to the Terms of Use and Terms of Sale before submitting.' };
     return null;
   }
 
@@ -188,6 +191,8 @@
       });
       // Formspree control fields
       data['_subject'] = 'New enquiry — Alternative Photographic';
+      // Assent record — timestamp at moment of submission
+      data['client_agreed_at'] = new Date().toISOString();
 
       enquireSubmit.disabled = true;
       enquireSubmit.textContent = 'Sending…';
@@ -248,8 +253,17 @@
     var collectorSubmit = collectorForm.querySelector('[type="submit"]');
     var collectorEmail  = collectorForm.querySelector('[name="email"]');
 
+    var collectorTerms = collectorForm.querySelector('[name="terms-agreement"]');
+
     collectorForm.addEventListener('submit', function (e) {
       e.preventDefault();
+
+      // --- Validate terms agreement ---
+      if (collectorTerms && !collectorTerms.checked) {
+        setStatus(collectorStatus, 'Please confirm you have read and agree to the Terms of Use and Terms of Sale before registering.', 'error');
+        collectorTerms.focus();
+        return;
+      }
 
       // --- Validate email ---
       if (!collectorEmail || !collectorEmail.value.trim()) {
@@ -276,8 +290,10 @@
 
       // --- Submit to Formspree ---
       var data = {
-        email:    collectorEmail.value.trim(),
-        _subject: 'Collector list registration — Alternative Photographic'
+        email:            collectorEmail.value.trim(),
+        _subject:         'Collector list registration — Alternative Photographic',
+        terms_version:    'v1.0-2026-08-07',
+        client_agreed_at: new Date().toISOString()
       };
 
       collectorSubmit.disabled = true;
