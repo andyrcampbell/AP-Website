@@ -1,253 +1,267 @@
 /**
  * Alternative Photographic -- Edition Data
  * =========================================
- * HOW TO ADD REAL PRICES AND PAYMENT LINKS (Andy -- read this):
+ * HOW TO ADD PAYMENT LINKS (Andy -- read this):
  *
- *   1. For each size entry, set `price` to a formatted string, e.g. "1,800"
- *   2. Set `paymentLink` to the Stripe Payment Link URL for that size
+ *   1. Set `paymentLink` to the Stripe Payment Link URL for that size
  *      (create: Stripe Dashboard -> Payment Links -> + New)
- *   3. Once both price and paymentLink are set for a size, the
- *      "Acquire this Edition" CTA activates automatically for that size.
+ *   2. Once paymentLink is set for a size, the "Acquire this Edition"
+ *      CTA activates automatically for that size.
  *
- * PLACEHOLDER SENTINELS -- do not ship these live:
- *   price: null              -> displays as "--" (price not set)
+ * PLACEHOLDER SENTINEL -- do not ship live:
  *   paymentLink: "REPLACE_ME"  -> CTA falls back to enquiry;
  *                                  no broken or fake link ships
  *
- * PRINT SIZES (three tiers, landscape 3:2 proportion):
- *   Entry      -- 24 x 16 in / 60 x 40 cm
- *   Standard   -- 36 x 24 in / 90 x 60 cm
- *   Exhibition -- 48 x 32 in / 120 x 80 cm
+ * PRICES: set. Do not change without Andy's authorisation.
+ *   Entry $95 / Standard $225 / Exhibition $350 (2026-08-10)
+ *
+ * EDITION SIZE: 50 for all works (2026-08-10).
+ *
+ * PRINT SIZES -- orientation applied per-work from actual image dimensions:
+ *   Landscape works  Entry 19 x 13 in / Standard 36 x 24 in / Exhibition 45 x 30 in
+ *   Portrait works   Entry 13 x 19 in / Standard 24 x 36 in / Exhibition 30 x 45 in
  * =========================================
  */
 
 /* global window */
 window.AP_EDITIONS = {
-  'la-salute-at-dawn': {
+
+  /* ── VENICE ─────────────────────────────────────────────────────────────── */
+
+  'la-salute-at-dawn': {               /* image: venicecathedral.webp 1920x1280 LANDSCAPE */
     title:        'La Salute at Dawn',
     series:       'Venice',
-    edition:      'Edition of 10',
+    edition:      'Edition of 50',
     enquiryParam: 'La+Salute+at+Dawn',
     sizes: [
-      { id: 'sm', label: 'Entry',      dimensions: '24 x 16 in / 60 x 40 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'md', label: 'Standard',   dimensions: '36 x 24 in / 90 x 60 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'lg', label: 'Exhibition', dimensions: '48 x 32 in / 120 x 80 cm', price: null, paymentLink: 'REPLACE_ME' }
+      { id: 'sm', label: 'Entry',      dimensions: '19 x 13 in', price: '$95',  paymentLink: 'REPLACE_ME' },
+      { id: 'md', label: 'Standard',   dimensions: '36 x 24 in', price: '$225', paymentLink: 'REPLACE_ME' },
+      { id: 'lg', label: 'Exhibition', dimensions: '45 x 30 in', price: '$350', paymentLink: 'REPLACE_ME' }
     ]
   },
 
-  'red-lanterns-giudecca': {
+  'red-lanterns-giudecca': {           /* image: venicepromenade.webp 1273x1920 PORTRAIT */
     title:        'Red Lanterns, Giudecca',
     series:       'Venice',
-    edition:      'Edition of 10',
+    edition:      'Edition of 50',
     enquiryParam: 'Red+Lanterns,+Giudecca',
     sizes: [
-      { id: 'sm', label: 'Entry',      dimensions: '24 x 16 in / 60 x 40 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'md', label: 'Standard',   dimensions: '36 x 24 in / 90 x 60 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'lg', label: 'Exhibition', dimensions: '48 x 32 in / 120 x 80 cm', price: null, paymentLink: 'REPLACE_ME' }
+      { id: 'sm', label: 'Entry',      dimensions: '13 x 19 in', price: '$95',  paymentLink: 'REPLACE_ME' },
+      { id: 'md', label: 'Standard',   dimensions: '24 x 36 in', price: '$225', paymentLink: 'REPLACE_ME' },
+      { id: 'lg', label: 'Exhibition', dimensions: '30 x 45 in', price: '$350', paymentLink: 'REPLACE_ME' }
     ]
   },
 
-  'the-grand-canal-morning': {
+  'the-grand-canal-morning': {         /* image: venicecanal.webp 1920x1280 LANDSCAPE */
     title:        'The Grand Canal, Morning',
     series:       'Venice',
-    edition:      'Edition of 10',
+    edition:      'Edition of 50',
     enquiryParam: 'The+Grand+Canal,+Morning',
     sizes: [
-      { id: 'sm', label: 'Entry',      dimensions: '24 x 16 in / 60 x 40 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'md', label: 'Standard',   dimensions: '36 x 24 in / 90 x 60 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'lg', label: 'Exhibition', dimensions: '48 x 32 in / 120 x 80 cm', price: null, paymentLink: 'REPLACE_ME' }
+      { id: 'sm', label: 'Entry',      dimensions: '19 x 13 in', price: '$95',  paymentLink: 'REPLACE_ME' },
+      { id: 'md', label: 'Standard',   dimensions: '36 x 24 in', price: '$225', paymentLink: 'REPLACE_ME' },
+      { id: 'lg', label: 'Exhibition', dimensions: '45 x 30 in', price: '$350', paymentLink: 'REPLACE_ME' }
     ]
   },
 
-  'la-serenissima-after-dark': {
+  'la-serenissima-after-dark': {       /* image: venice.webp 1280x1920 PORTRAIT */
     title:        'La Serenissima After Dark',
     series:       'Venice',
-    edition:      'Edition of 10',
+    edition:      'Edition of 50',
     enquiryParam: 'La+Serenissima+After+Dark',
     sizes: [
-      { id: 'sm', label: 'Entry',      dimensions: '24 x 16 in / 60 x 40 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'md', label: 'Standard',   dimensions: '36 x 24 in / 90 x 60 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'lg', label: 'Exhibition', dimensions: '48 x 32 in / 120 x 80 cm', price: null, paymentLink: 'REPLACE_ME' }
+      { id: 'sm', label: 'Entry',      dimensions: '13 x 19 in', price: '$95',  paymentLink: 'REPLACE_ME' },
+      { id: 'md', label: 'Standard',   dimensions: '24 x 36 in', price: '$225', paymentLink: 'REPLACE_ME' },
+      { id: 'lg', label: 'Exhibition', dimensions: '30 x 45 in', price: '$350', paymentLink: 'REPLACE_ME' }
     ]
   },
 
-  'under-canvas-dorsoduro': {
+  'under-canvas-dorsoduro': {          /* image: gondolas.webp 1483x1920 PORTRAIT */
     title:        'Under Canvas, Dorsoduro',
     series:       'Venice',
-    edition:      'Edition of 10',
+    edition:      'Edition of 50',
     enquiryParam: 'Under+Canvas,+Dorsoduro',
     sizes: [
-      { id: 'sm', label: 'Entry',      dimensions: '24 x 16 in / 60 x 40 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'md', label: 'Standard',   dimensions: '36 x 24 in / 90 x 60 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'lg', label: 'Exhibition', dimensions: '48 x 32 in / 120 x 80 cm', price: null, paymentLink: 'REPLACE_ME' }
+      { id: 'sm', label: 'Entry',      dimensions: '13 x 19 in', price: '$95',  paymentLink: 'REPLACE_ME' },
+      { id: 'md', label: 'Standard',   dimensions: '24 x 36 in', price: '$225', paymentLink: 'REPLACE_ME' },
+      { id: 'lg', label: 'Exhibition', dimensions: '30 x 45 in', price: '$350', paymentLink: 'REPLACE_ME' }
     ]
   },
 
-  'carnevale': {
+  'carnevale': {                       /* image: venicecarnival.webp 1278x1920 PORTRAIT */
     title:        'Carnevale',
     series:       'Venice',
-    edition:      'Edition of 10',
+    edition:      'Edition of 50',
     enquiryParam: 'Carnevale',
     sizes: [
-      { id: 'sm', label: 'Entry',      dimensions: '24 x 16 in / 60 x 40 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'md', label: 'Standard',   dimensions: '36 x 24 in / 90 x 60 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'lg', label: 'Exhibition', dimensions: '48 x 32 in / 120 x 80 cm', price: null, paymentLink: 'REPLACE_ME' }
+      { id: 'sm', label: 'Entry',      dimensions: '13 x 19 in', price: '$95',  paymentLink: 'REPLACE_ME' },
+      { id: 'md', label: 'Standard',   dimensions: '24 x 36 in', price: '$225', paymentLink: 'REPLACE_ME' },
+      { id: 'lg', label: 'Exhibition', dimensions: '30 x 45 in', price: '$350', paymentLink: 'REPLACE_ME' }
     ]
   },
 
-  'the-mask-makers': {
+  'the-mask-makers': {                 /* image: venicemasks.webp 1920x1280 LANDSCAPE */
     title:        'The Mask Makers',
     series:       'Venice',
-    edition:      'Edition of 10',
+    edition:      'Edition of 50',
     enquiryParam: 'The+Mask+Makers',
     sizes: [
-      { id: 'sm', label: 'Entry',      dimensions: '24 x 16 in / 60 x 40 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'md', label: 'Standard',   dimensions: '36 x 24 in / 90 x 60 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'lg', label: 'Exhibition', dimensions: '48 x 32 in / 120 x 80 cm', price: null, paymentLink: 'REPLACE_ME' }
+      { id: 'sm', label: 'Entry',      dimensions: '19 x 13 in', price: '$95',  paymentLink: 'REPLACE_ME' },
+      { id: 'md', label: 'Standard',   dimensions: '36 x 24 in', price: '$225', paymentLink: 'REPLACE_ME' },
+      { id: 'lg', label: 'Exhibition', dimensions: '45 x 30 in', price: '$350', paymentLink: 'REPLACE_ME' }
     ]
   },
 
-  'luskentyre-strand': {
+  /* ── HEBRIDES & HIGHLANDS ────────────────────────────────────────────────── */
+
+  'luskentyre-strand': {               /* image: lewisbeach.webp 1920x960 LANDSCAPE */
     title:        'Luskentyre Strand',
     series:       'Hebrides & Highlands',
-    edition:      'Edition of 10',
+    edition:      'Edition of 50',
     enquiryParam: 'Luskentyre+Strand',
     sizes: [
-      { id: 'sm', label: 'Entry',      dimensions: '24 x 16 in / 60 x 40 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'md', label: 'Standard',   dimensions: '36 x 24 in / 90 x 60 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'lg', label: 'Exhibition', dimensions: '48 x 32 in / 120 x 80 cm', price: null, paymentLink: 'REPLACE_ME' }
+      { id: 'sm', label: 'Entry',      dimensions: '19 x 13 in', price: '$95',  paymentLink: 'REPLACE_ME' },
+      { id: 'md', label: 'Standard',   dimensions: '36 x 24 in', price: '$225', paymentLink: 'REPLACE_ME' },
+      { id: 'lg', label: 'Exhibition', dimensions: '45 x 30 in', price: '$350', paymentLink: 'REPLACE_ME' }
     ]
   },
 
-  'the-blackhouse-harris': {
+  'the-blackhouse-harris': {           /* image: harriscottages.webp 1920x1280 LANDSCAPE */
     title:        'The Blackhouse, Harris',
     series:       'Hebrides & Highlands',
-    edition:      'Edition of 10',
+    edition:      'Edition of 50',
     enquiryParam: 'The+Blackhouse,+Harris',
     sizes: [
-      { id: 'sm', label: 'Entry',      dimensions: '24 x 16 in / 60 x 40 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'md', label: 'Standard',   dimensions: '36 x 24 in / 90 x 60 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'lg', label: 'Exhibition', dimensions: '48 x 32 in / 120 x 80 cm', price: null, paymentLink: 'REPLACE_ME' }
+      { id: 'sm', label: 'Entry',      dimensions: '19 x 13 in', price: '$95',  paymentLink: 'REPLACE_ME' },
+      { id: 'md', label: 'Standard',   dimensions: '36 x 24 in', price: '$225', paymentLink: 'REPLACE_ME' },
+      { id: 'lg', label: 'Exhibition', dimensions: '45 x 30 in', price: '$350', paymentLink: 'REPLACE_ME' }
     ]
   },
 
-  'eilean-donan': {
+  'eilean-donan': {                    /* image: eileencastle.webp 1920x1280 LANDSCAPE */
     title:        'Eilean Donan',
     series:       'Hebrides & Highlands',
-    edition:      'Edition of 10',
+    edition:      'Edition of 50',
     enquiryParam: 'Eilean+Donan',
     sizes: [
-      { id: 'sm', label: 'Entry',      dimensions: '24 x 16 in / 60 x 40 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'md', label: 'Standard',   dimensions: '36 x 24 in / 90 x 60 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'lg', label: 'Exhibition', dimensions: '48 x 32 in / 120 x 80 cm', price: null, paymentLink: 'REPLACE_ME' }
+      { id: 'sm', label: 'Entry',      dimensions: '19 x 13 in', price: '$95',  paymentLink: 'REPLACE_ME' },
+      { id: 'md', label: 'Standard',   dimensions: '36 x 24 in', price: '$225', paymentLink: 'REPLACE_ME' },
+      { id: 'lg', label: 'Exhibition', dimensions: '45 x 30 in', price: '$350', paymentLink: 'REPLACE_ME' }
     ]
   },
 
-  'rue-basse-monaco-ville': {
+  /* ── ALPINE & RIVIERA ───────────────────────────────────────────────────── */
+
+  'rue-basse-monaco-ville': {          /* image: monaco.webp 1280x1920 PORTRAIT */
     title:        'Rue Basse, Monaco-Ville',
     series:       'Alpine & Riviera',
-    edition:      'Edition of 10',
+    edition:      'Edition of 50',
     enquiryParam: 'Rue+Basse,+Monaco-Ville',
     sizes: [
-      { id: 'sm', label: 'Entry',      dimensions: '24 x 16 in / 60 x 40 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'md', label: 'Standard',   dimensions: '36 x 24 in / 90 x 60 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'lg', label: 'Exhibition', dimensions: '48 x 32 in / 120 x 80 cm', price: null, paymentLink: 'REPLACE_ME' }
+      { id: 'sm', label: 'Entry',      dimensions: '13 x 19 in', price: '$95',  paymentLink: 'REPLACE_ME' },
+      { id: 'md', label: 'Standard',   dimensions: '24 x 36 in', price: '$225', paymentLink: 'REPLACE_ME' },
+      { id: 'lg', label: 'Exhibition', dimensions: '30 x 45 in', price: '$350', paymentLink: 'REPLACE_ME' }
     ]
   },
 
-  'the-approach': {
+  'the-approach': {                    /* image: matterhorn.webp 1280x1920 PORTRAIT */
     title:        'The Approach',
     series:       'Alpine & Riviera',
-    edition:      'Edition of 10',
+    edition:      'Edition of 50',
     enquiryParam: 'The+Approach',
     sizes: [
-      { id: 'sm', label: 'Entry',      dimensions: '24 x 16 in / 60 x 40 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'md', label: 'Standard',   dimensions: '36 x 24 in / 90 x 60 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'lg', label: 'Exhibition', dimensions: '48 x 32 in / 120 x 80 cm', price: null, paymentLink: 'REPLACE_ME' }
+      { id: 'sm', label: 'Entry',      dimensions: '13 x 19 in', price: '$95',  paymentLink: 'REPLACE_ME' },
+      { id: 'md', label: 'Standard',   dimensions: '24 x 36 in', price: '$225', paymentLink: 'REPLACE_ME' },
+      { id: 'lg', label: 'Exhibition', dimensions: '30 x 45 in', price: '$350', paymentLink: 'REPLACE_ME' }
     ]
   },
 
-  'ice-plant-season-monterey': {
+  /* ── CALIFORNIA COAST ───────────────────────────────────────────────────── */
+
+  'ice-plant-season-monterey': {       /* image: monterey.webp 800x1200 PORTRAIT */
     title:        'Ice Plant Season, Monterey',
     series:       'California Coast',
-    edition:      'Edition of 10',
+    edition:      'Edition of 50',
     enquiryParam: 'Ice+Plant+Season,+Monterey',
     sizes: [
-      { id: 'sm', label: 'Entry',      dimensions: '24 x 16 in / 60 x 40 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'md', label: 'Standard',   dimensions: '36 x 24 in / 90 x 60 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'lg', label: 'Exhibition', dimensions: '48 x 32 in / 120 x 80 cm', price: null, paymentLink: 'REPLACE_ME' }
+      { id: 'sm', label: 'Entry',      dimensions: '13 x 19 in', price: '$95',  paymentLink: 'REPLACE_ME' },
+      { id: 'md', label: 'Standard',   dimensions: '24 x 36 in', price: '$225', paymentLink: 'REPLACE_ME' },
+      { id: 'lg', label: 'Exhibition', dimensions: '30 x 45 in', price: '$350', paymentLink: 'REPLACE_ME' }
     ]
   },
 
-  'pigeon-point-at-dusk': {
+  'pigeon-point-at-dusk': {            /* image: pidgeonpoint.webp 1200x675 LANDSCAPE */
     title:        'Pigeon Point at Dusk',
     series:       'California Coast',
-    edition:      'Edition of 10',
+    edition:      'Edition of 50',
     enquiryParam: 'Pigeon+Point+at+Dusk',
     sizes: [
-      { id: 'sm', label: 'Entry',      dimensions: '24 x 16 in / 60 x 40 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'md', label: 'Standard',   dimensions: '36 x 24 in / 90 x 60 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'lg', label: 'Exhibition', dimensions: '48 x 32 in / 120 x 80 cm', price: null, paymentLink: 'REPLACE_ME' }
+      { id: 'sm', label: 'Entry',      dimensions: '19 x 13 in', price: '$95',  paymentLink: 'REPLACE_ME' },
+      { id: 'md', label: 'Standard',   dimensions: '36 x 24 in', price: '$225', paymentLink: 'REPLACE_ME' },
+      { id: 'lg', label: 'Exhibition', dimensions: '45 x 30 in', price: '$350', paymentLink: 'REPLACE_ME' }
     ]
   },
 
-  'battery-survivors': {
+  'battery-survivors': {               /* image: abandoned-bunker.webp 1920x1279 LANDSCAPE */
     title:        'Battery Survivors',
     series:       'California Coast',
-    edition:      'Edition of 10',
+    edition:      'Edition of 50',
     enquiryParam: 'Battery+Survivors',
     sizes: [
-      { id: 'sm', label: 'Entry',      dimensions: '24 x 16 in / 60 x 40 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'md', label: 'Standard',   dimensions: '36 x 24 in / 90 x 60 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'lg', label: 'Exhibition', dimensions: '48 x 32 in / 120 x 80 cm', price: null, paymentLink: 'REPLACE_ME' }
+      { id: 'sm', label: 'Entry',      dimensions: '19 x 13 in', price: '$95',  paymentLink: 'REPLACE_ME' },
+      { id: 'md', label: 'Standard',   dimensions: '36 x 24 in', price: '$225', paymentLink: 'REPLACE_ME' },
+      { id: 'lg', label: 'Exhibition', dimensions: '45 x 30 in', price: '$350', paymentLink: 'REPLACE_ME' }
     ]
   },
 
-  'the-last-minute': {
+  'the-last-minute': {                 /* image: sunset1.webp 1280x1920 PORTRAIT */
     title:        'The Last Minute',
     series:       'California Coast',
-    edition:      'Edition of 10',
+    edition:      'Edition of 50',
     enquiryParam: 'The+Last+Minute',
     sizes: [
-      { id: 'sm', label: 'Entry',      dimensions: '24 x 16 in / 60 x 40 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'md', label: 'Standard',   dimensions: '36 x 24 in / 90 x 60 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'lg', label: 'Exhibition', dimensions: '48 x 32 in / 120 x 80 cm', price: null, paymentLink: 'REPLACE_ME' }
+      { id: 'sm', label: 'Entry',      dimensions: '13 x 19 in', price: '$95',  paymentLink: 'REPLACE_ME' },
+      { id: 'md', label: 'Standard',   dimensions: '24 x 36 in', price: '$225', paymentLink: 'REPLACE_ME' },
+      { id: 'lg', label: 'Exhibition', dimensions: '30 x 45 in', price: '$350', paymentLink: 'REPLACE_ME' }
     ]
   },
 
-  'morning-four': {
+  /* ── SELECTED WORKS ─────────────────────────────────────────────────────── */
+
+  'morning-four': {                    /* image: lexingtonrowers.webp 1845x801 LANDSCAPE */
     title:        'Morning Four',
     series:       'Selected Works',
-    edition:      'Edition of 10',
+    edition:      'Edition of 50',
     enquiryParam: 'Morning+Four',
     sizes: [
-      { id: 'sm', label: 'Entry',      dimensions: '24 x 16 in / 60 x 40 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'md', label: 'Standard',   dimensions: '36 x 24 in / 90 x 60 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'lg', label: 'Exhibition', dimensions: '48 x 32 in / 120 x 80 cm', price: null, paymentLink: 'REPLACE_ME' }
+      { id: 'sm', label: 'Entry',      dimensions: '19 x 13 in', price: '$95',  paymentLink: 'REPLACE_ME' },
+      { id: 'md', label: 'Standard',   dimensions: '36 x 24 in', price: '$225', paymentLink: 'REPLACE_ME' },
+      { id: 'lg', label: 'Exhibition', dimensions: '45 x 30 in', price: '$350', paymentLink: 'REPLACE_ME' }
     ]
   },
 
-  'pacific-vigil': {
+  'pacific-vigil': {                   /* image: mexico.webp 1920x1280 LANDSCAPE */
     title:        'Pacific Vigil',
     series:       'Selected Works',
-    edition:      'Edition of 10',
+    edition:      'Edition of 50',
     enquiryParam: 'Pacific+Vigil',
     sizes: [
-      { id: 'sm', label: 'Entry',      dimensions: '24 x 16 in / 60 x 40 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'md', label: 'Standard',   dimensions: '36 x 24 in / 90 x 60 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'lg', label: 'Exhibition', dimensions: '48 x 32 in / 120 x 80 cm', price: null, paymentLink: 'REPLACE_ME' }
+      { id: 'sm', label: 'Entry',      dimensions: '19 x 13 in', price: '$95',  paymentLink: 'REPLACE_ME' },
+      { id: 'md', label: 'Standard',   dimensions: '36 x 24 in', price: '$225', paymentLink: 'REPLACE_ME' },
+      { id: 'lg', label: 'Exhibition', dimensions: '45 x 30 in', price: '$350', paymentLink: 'REPLACE_ME' }
     ]
   },
 
-  'afterglow': {
+  'afterglow': {                       /* image: twilighthours.webp 1280x1920 PORTRAIT */
     title:        'Afterglow',
     series:       'Selected Works',
-    edition:      'Edition of 10',
+    edition:      'Edition of 50',
     enquiryParam: 'Afterglow',
     sizes: [
-      { id: 'sm', label: 'Entry',      dimensions: '24 x 16 in / 60 x 40 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'md', label: 'Standard',   dimensions: '36 x 24 in / 90 x 60 cm', price: null, paymentLink: 'REPLACE_ME' },
-      { id: 'lg', label: 'Exhibition', dimensions: '48 x 32 in / 120 x 80 cm', price: null, paymentLink: 'REPLACE_ME' }
+      { id: 'sm', label: 'Entry',      dimensions: '13 x 19 in', price: '$95',  paymentLink: 'REPLACE_ME' },
+      { id: 'md', label: 'Standard',   dimensions: '24 x 36 in', price: '$225', paymentLink: 'REPLACE_ME' },
+      { id: 'lg', label: 'Exhibition', dimensions: '30 x 45 in', price: '$350', paymentLink: 'REPLACE_ME' }
     ]
   }
+
 };
