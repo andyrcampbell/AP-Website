@@ -300,7 +300,7 @@
       var data = {
         email:            collectorEmail.value.trim(),
         _subject:         'Collector list registration — Alternative Photographic',
-        terms_version:    'v1.5-2026-08-10',
+        terms_version:    'v1.6-2026-08-10',
         client_agreed_at: new Date().toISOString()
       };
 
