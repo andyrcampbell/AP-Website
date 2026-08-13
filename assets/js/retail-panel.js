@@ -33,6 +33,14 @@
     });
   });
 
+  // Initial sync: collapse static aside edition row from three-line fallback to
+  // the default (Entry) tier string now that the interactive selector is live.
+  if (artwork.editions) {
+    var defaultId   = artwork.sizes[0] && artwork.sizes[0].id;
+    var initLabelEl = document.getElementById('edition-panel-tier-label');
+    if (initLabelEl && defaultId) initLabelEl.innerHTML = artwork.editions[defaultId] || '';
+  }
+
   /* ------------------------------------------------------------------
      Builders
   ------------------------------------------------------------------ */
@@ -54,7 +62,9 @@
     }).join('');
 
     return (
-      '<p class="retail-panel__edition-note">' + aw.edition + '</p>' +
+      '<p class="retail-panel__edition-note" id="rp-edition-note">' +
+        ((aw.editions && aw.editions[first.id]) || aw.edition || '') +
+      '</p>' +
       '<fieldset class="retail-panel__sizes">' +
         '<legend class="retail-panel__sizes-legend">Select print size</legend>' +
         tiles +
@@ -124,6 +134,14 @@
     }
 
     if (ctaEl) ctaEl.innerHTML = buildCTA(aw, size);
+
+    // Update tier edition label — retail panel note + static aside row
+    if (aw.editions && aw.editions[size.id]) {
+      var editionNoteEl = panel.querySelector('#rp-edition-note');
+      if (editionNoteEl) editionNoteEl.innerHTML = aw.editions[size.id];
+      var staticEditionEl = document.getElementById('edition-panel-tier-label');
+      if (staticEditionEl) staticEditionEl.innerHTML = aw.editions[size.id];
+    }
   }
 
 }());
