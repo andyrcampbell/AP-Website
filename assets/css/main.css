@@ -29,7 +29,7 @@
     --prim-grey-3:       #5A5550;
     --prim-gold:         #C8A96A;
     --prim-gold-light:   #D8BC82;
-    --prim-red:          #B5211A;
+    --prim-logo-gold:    #F7941D; /* logo swoosh ONLY — distinct from CTA/accent gold --prim-gold #C8A96A */
 
     /* Spacing scale (base 4) */
     --sp-1:  0.25rem;
@@ -85,7 +85,7 @@
     /* Accent */
     --color-accent:          var(--prim-gold);
     --color-accent-hover:    var(--prim-gold-light);
-    --color-brand:           var(--prim-red);
+    --color-brand:           var(--prim-logo-gold); /* logo swoosh colour — do not use in UI component rules */
 
     /* Borders */
     --color-border:          rgba(240, 237, 232, 0.10);
